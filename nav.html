@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+    <script src="https://kit.fontawesome.com/af6aba113a.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <!--
+    <div class="container" onclick="myFunction(this)">
+        <div class="barHolder">
+            <div class="bar1"></div>
+            <div class="bar2"></div>
+            <div class="bar3"></div>
+        </div>  -->
+
+<style>
+    
+*{
+    padding: 0px;
+    margin: 0px;
+    font-family: 'Poppins';
+    transition: 0.5s;
+    animation: ease-in-out;
+}
+
+body{
+    height: auto;
+}
+
+.hidden{
+  /*  display: none; */
+    transition: 0.5s;
+    animation: ease-in-out;
+    width: 60px;
+    position: fixed;
+}
+
+.navbarWrapper{
+    background-color: #1A1C20;
+    width: 60px;
+    height: 1000px;
+    padding-top: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.iconSection{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+
+.iconName{
+    margin-bottom: 20px;
+    margin-top: 15px;
+    border-radius: 35px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: larger;
+    color: wheat;
+}
+
+.navbarTop{
+    overflow: hidden;
+    margin-bottom: 8px;
+    margin-top: 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.navbarMid{
+    overflow: hidden;
+    margin-bottom: 8px;
+    margin-top: 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.navbarBottom{
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.iconHolder{
+    height: 35px;
+    width: 35px;
+    border: 2px solid white;
+    margin-bottom: 20px;
+    margin-top: 15px;
+    border-radius: 35px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: larger;
+    color: wheat;
+}
+
+
+
+
+  .barHolder{
+    padding-left: 12.5px;
+    padding-right: 12.5px;
+    width: 35px;
+    height: 60px;
+    display: flex;
+    font-size: larger;
+    justify-content: center;
+    flex-direction: column;
+    align-items: flex-start;
+    transition: 0.5s;
+    animation: ease-in-out;
+  }
+
+  .iconName{
+    display: none;
+}
+
+  /* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+    .navbarWrapper{
+        width: 100px;
+    }
+    .hidden{
+        width: 100px;
+    }
+    .iconName{
+        display: none;
+    }
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+    .iconName{
+        display: flex;
+        margin-left: 20px;
+    }
+    .navbarWrapper{
+        width: 240px;
+        align-items: flex-start;
+        padding-left: 45px;
+        position: fixed;
+    }
+    .hidden{
+        width: 260px;
+    }
+}
+</style>
+
+
+
+        <div class="hidden">
+
+            <div class="navbarWrapper">
+
+                <div class="navbarTop">
+
+                    <div class="iconSection">
+                        <div class="iconHolder">
+                            <p><i class="fa-solid fa-house"></i></p>
+                        </div>
+                        <p class="iconName">Home</p>
+                    </div>
+                    <div class="iconSection">
+                        <div class="iconHolder">
+                            <p><i class="fa-solid fa-newspaper"></i></p>
+                        </div>
+                        <p class="iconName">About</p>
+                    </div>
+                    <div class="iconSection">
+                        <div class="iconHolder">
+                            <p><i class="fa-solid fa-bell"></i></p>
+                        </div>
+                        <p class="iconName">Notifications</p>
+                    </div>
+
+                </div>
+
+                <div class="navbarMid">
+
+                    <div class="iconSection">
+                        <div class="iconHolder">
+                            <p><i class="fa-solid fa-link"></i></p>
+                        </div>
+                        <p class="iconName">Referrals</p>
+                    </div>
+
+                    <div class="iconSection">
+                        <div class="iconHolder">
+                            <p><i class="fa-solid fa-circle-dollar-to-slot"></i></p>
+                        </div>
+                        <p class="iconName">Earnings</p>
+                    </div>
+
+                    <div class="iconSection">
+                        <div class="iconHolder">
+                            <p><i class="fa-solid fa-rectangle-ad"></i></p>
+                        </div>
+                        <p class="iconName">Advertise</p>
+                    </div>
+                </div>
+
+
+                <div class="navbarBottom">
+
+                    <div class="iconSection">
+                        <div class="iconHolder">
+                            <p><i class="fa-solid fa-gear"></i></p>
+                        </div>
+                        <p class="iconName">Settings</p>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+    <script>
+        window.addEventListener("resize", function() {
+    // Check if screen size is larger than an iPad
+    var mediaQuery = window.matchMedia("(min-width: 768px)");
+    // Get the container element
+    var container = document.querySelector(".container");
+    // Get the barHolder element
+    var barHolder = document.querySelector(".barHolder");
+  
+    if (mediaQuery.matches) {
+      // Add the "change" class to the container
+      container.classList.add("change");
+      // Remove the barHolder element
+      barHolder.style.display = "none";
+    } else {
+      // Remove the "change" class from the container
+      container.classList.remove("change");
+      // Show the barHolder element
+      barHolder.style.display = "flex";
+    }
+  });
+  
+  // Call the function on page load to initialize the state
+  window.addEventListener("load", function() {
+    var container = document.querySelector(".container");
+    var barHolder = document.querySelector(".barHolder");
+    var mediaQuery = window.matchMedia("(min-width: 768px)");
+    if (mediaQuery.matches) {
+      container.classList.add("change");
+      barHolder.style.display = "none";
+    }
+  });
+  
+  function myFunction(x) {
+    x.classList.toggle("change");
+  }
+
+    </script>
+</body>
+
+</html>
